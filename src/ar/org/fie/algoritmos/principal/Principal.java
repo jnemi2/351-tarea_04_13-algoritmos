@@ -6,6 +6,9 @@
 package ar.org.fie.algoritmos.principal;
 
 import ar.org.fie.algoritmos.components.Ejemplos;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 /**
  *
@@ -50,7 +53,90 @@ public class Principal {
         System.out.println("\n\nEJERCICIO 3\n");
         System.out.println(ejemplo.tablaVerdad());
         
-        System.out.println(ejemplo.calcularSueldo(45000, 0.054f, 0.07f, 10000));
+        //4- Utilizar Estructura de control selectiva múltiple. Ejemplo a su criterio.
+        System.out.println("\n\nEJERCICIO 4\n");
+        System.out.println(ejemplo.calcularSueldo(52000, 9000));
+        
+        //5- Armar una función en java, que dado un numero recibido como parámetro, retorne el
+        //   factorial del mismo (utilizando una estructura repetitiva). Usar esta función desde main
+        //   para probarla.
+        System.out.println("\n\nEJERCICIO 5\n");
+        System.out.println(ejemplo.factorialRepetitivo(7));
+        
+        //6- Armar otra función en java, que dado un numero recibido como parámetro, retorne el
+        //   factorial del mismo (utilizando recursividad). Usar esta función desde main para
+        //   probarla.
+        System.out.println("\n\nEjercicio 6\n");
+        System.out.println(ejemplo.factorialRecursivo(7));
+        
+        //7- Escriba una función en java, que dados 3 parámetros, permita obtener las raíces de la
+        //   ecuación de segundo grado (cuadrática) ax^2 + bx + c, y las escriba por pantalla.
+        //   (numero imaginario representar con i). Usar esta función desde main para probarla
+        System.out.println("\n\nEjercicio 7\n");
+        System.out.println(ejemplo.raices(1,0,-1));
+        System.out.println(ejemplo.raices(1,0,1));
+        
+        //8- Escriba una función en java, que dado un numero retorne true si es par o false si es
+        //   impar (utilizar el operador resto). Usar esta función desde main para probarla.
+        System.out.println("\n\nEjercicio 8\n");
+        System.out.println(ejemplo.esPar(8));
+        System.out.println(ejemplo.esPar(727));
+        
+        //9- Utilizar en un ejemplo una variable global dentro de una misma Clase, que es utilizada
+        //   en distintos métodos.
+        System.out.println("\n\nEjercicio 9\n");
+        System.out.println(ejemplo.alcanceDeVariables(8));
+        
+        //10-Estructuras de datos con array estático (vector de 1 dimensión []). Armar un ejemplo de
+        //   un vector de números enteros que simbolizan notas de alumnos, probar imprimiendo
+        //   por consola los valores del vector, y el promedio de los números del vector.
+        System.out.println("\n\nEjemplo 10\n");
+        System.out.println(ejemplo.mostrarNotas());
+        
+        //11-Armar un ejemplo de una lista de nombres de alumnos (ArrayList), probar imprimiendo
+        //   por consola los valores de la lista a través de un for, y la cantidad de alumnos.
+        System.out.println("\n\nEjemplo 11\n");
+        ejemplo.mostrarLista();
+        
+        //12-Mostrar con la lista anterior el uso de los métodos contains e indexOf. Arme ejemplos
+        //   de búsqueda e imprima por consola.
+        System.out.println("\n\nEjemplo 12\n");
+        ejemplo.contenidoDeLista();
+        
+        //13-Anidamiento de estructura repetitiva, Armar un ejemplo en java, que, dada una lista de
+        //   números recibida como parámetro, retorne la misma lista, pero ordenada de menor a
+        //   mayor.
+        System.out.println("\n\nEjemplo 13\n");
+        ArrayList<Integer> lista = new ArrayList<>();
+        ejemplo.cargaRandom(lista, 7);
+        ejemplo.bubbleSort(lista);
+        for (int i = 0; i < lista.size(); i++)
+            System.out.println(lista.get(i));
+        
+        //14-Con el ejercicio anterior, arme otro ejemplo y compruebe si el parámetro vector es
+        //   enviado como una copia o como una referencia al original. Intente modificar su
+        //   contenido dentro del método y luego imprimiendo por fuera del método, para
+        //   corroborar si el original cambia o no cambia. Coméntelo en el código lo entendido.
+        System.out.println("\n\nEjemplo 14\n");
+        lista.clear();
+        ejemplo.cargaRandom(lista, 7);  /* Considerando que el objeto lista se pasa por parámetro y en ningún momento 
+                                            le asigno el retorno del método cargaRandom(..), se puede decir que el
+                                            pasaje es por referencia ya que al mostrar el contenido de la lista desde
+                                            la applicación Principal, se observa que el objeto fue modificado.*/
+        for (int i = 0; i < lista.size(); i++)
+            System.out.println(lista.get(i));
+        
+        //15-Realizar un procedimiento que reciba como parámetro una pila con 3 elementos
+        //   utilizando el objeto Stack de JAVA, dentro el procedimiento debe imprimir los valores
+        //   desde el primero en ser agregado hasta el último. Es decir, la pila invertida.
+        //   Si la pila tiene puesto Jorge, Carlos, José, donde jorge es la cima de la pila, al
+        //   imprimirla debe imprimir José, Carlos, Jorge.
+        System.out.println("\n\nEjemplo 15\n");
+        Stack pila = new Stack();
+        pila.push(1);
+        pila.push(1.5);
+        pila.push("Ultimo en apilarse");
+        ejemplo.mostrarPilaInvertida(pila);
     }
     
 }
